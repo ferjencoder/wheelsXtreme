@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #777;
+  padding: 2rem;
+  overflow: hidden;
+}
+header {
+  position: relative;
+}
+
+.ps-1 {
+  padding-left: 0.5em;
+}
+
+.overlay-video {
+  height: 95vh;
+  width: 100%;
+  background-size: cover;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  z-index: 10;
+}
+
+.video-bg {
+  height: 95vh;
+  width: calc(100vw - 40px);
+  position: absolute;
+  background-position: center;
+  object-fit: cover;
+  transform: scaleX(-1);
+  z-index: -1;
+}
+
+.logo-hero {
+  height: 1.5em;
+  -webkit-animation: rotate-center 2s linear infinite both;
+  animation: rotate-center 2s linear infinite both;
+}
+
+.title {
+  color: white;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 1em 0 0 1em;
+  z-index: 9;
+}
+
+.text-video {
+  height: 95vh;
+  width: 55rem;
+  color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  font-size: 6rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  position: absolute;
+  padding-top: 25rem;
+  padding-left: 10rem;
+  animation-duration: 1s;
+  animation-name: heroTextAnimation;
+  backface-visibility: hidden;
+  z-index: 10;
+}
+
+.video-button {
+  color: white;
+  background-color: #141414;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 1.5em;
+  padding: 0.4em;
+  border: 0;
+  position: relative;
+}
+
+.video-button img {
+  width: 4rem;
+  height: auto;
+  position: absolute;
+  top: -0.4em;
+  left: -0.22em;
+  transform: rotate(-45deg);
+  animation: buttonHeroAnimation 1s infinite;
+  backface-visibility: hidden;
+}
+
+.navbar {
+  position: absolute;
+  width: 5rem;
+  height: auto;
+  top: 1.4em;
+  right: 1.4em;
+  z-index: 8;
+}
+.navbar:hover {
+  backface-visibility: hidden;
+  animation: rotate-center 2s linear infinite both;
+}
+
+/* ANIMATIONS */
+
+@keyframes heroTextAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-35rem);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes buttonHeroAnimation {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  40% {
+    transform: scale(1.3) rotate(-45deg);
+  }
+  55% {
+    transform: scale(1.6) rotate(-45deg);
+  }
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
